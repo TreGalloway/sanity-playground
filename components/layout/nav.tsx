@@ -1,7 +1,7 @@
 import { IconCommand } from '@tabler/icons'
+import CommandPalette from 'components/cmd/cmd-palette'
 import Head from 'next/head'
 import Link from 'next/link'
-import CommandPalette from 'components/cmd/cmd-palette.tsx'
 
 export default function Navbar() {
   return (
@@ -52,7 +52,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               <div className="block ">
                 <button className=" hover:text-sky-200">
-                    <CommandPalette/>
+                  <CommandPalette />
                 </button>
               </div>
             </div>

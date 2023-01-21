@@ -6,12 +6,11 @@ import {
   IconNews,
   IconSearch,
 } from '@tabler/icons'
-
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Command, CommandInput, CommandList, CommandOption } from 'superkey'
 
-export default function CommandPalette ()  {
+export default function CommandPalette() {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const router = useRouter()
@@ -47,8 +46,6 @@ export default function CommandPalette ()  {
       action: () => router.push('/newsletter'),
     },
   ]
-
-
 
   // Ctrl+k to open command =>
   useEffect(() => {
@@ -131,4 +128,3 @@ export default function CommandPalette ()  {
     </>
   )
 }
-
