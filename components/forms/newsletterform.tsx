@@ -51,18 +51,6 @@ export default function NewsletterForm() {
                 </div>
               </div>
 
-              {/* <div>
-                <label className="sr-only" htmlFor="message">
-                  Message
-                </label>
-                <textarea
-                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Message"
-                  rows="6"
-                  id="message"
-                ></textarea>
-              </div> */}
-
               <div className="mt-4">
                 <button
                   type="submit"
@@ -78,9 +66,9 @@ export default function NewsletterForm() {
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>

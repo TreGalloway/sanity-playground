@@ -1,4 +1,3 @@
-import { PreviewSuspense } from '@sanity/preview-kit'
 import PostPage from 'components/PostPage'
 import {
   getAllPostsSlugs,
@@ -7,9 +6,6 @@ import {
 } from 'lib/sanity.client'
 import { Post, Settings } from 'lib/sanity.queries'
 import { GetStaticProps } from 'next'
-import { lazy } from 'react'
-
-const PreviewPostPage = lazy(() => import('components/PreviewPostPage'))
 
 interface PageProps {
   post: Post
@@ -29,29 +25,6 @@ interface PreviewData {
 
 export default function ProjectSlugRoute(props: PageProps) {
   const { settings, post, morePosts, preview, token } = props
-
-  if (preview) {
-    return (
-      <PreviewSuspense
-        fallback={
-          <PostPage
-            loading
-            preview
-            post={post}
-            morePosts={morePosts}
-            settings={settings}
-          />
-        }
-      >
-        <PreviewPostPage
-          token={token}
-          post={post}
-          morePosts={morePosts}
-          settings={settings}
-        />
-      </PreviewSuspense>
-    )
-  }
 
   return <PostPage post={post} morePosts={morePosts} settings={settings} />
 }
@@ -91,7 +64,7 @@ export const getStaticPaths = async () => {
   const slugs = await getAllPostsSlugs()
 
   return {
-    paths: slugs?.map(({ slug }) => `/posts/${slug}`) || [],
+    paths: slugs?.map(({ slug }) => `/blog/${slug}`) || [],
     fallback: false,
   }
 }
